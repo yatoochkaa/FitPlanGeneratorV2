@@ -1,18 +1,17 @@
 import random
 
+from exercises import EXERCISES
+
 
 def generate_workout(exercises, count=4):
     return random.sample(exercises, count)
 
 
 if __name__ == "__main__":
-    exercises = [
-        "Приседания",
-        "Отжимания",
-        "Планка",
-        "Выпады",
-        "Подтягивания"
-    ]
+    exercises = []
+
+    for group in EXERCISES.values():
+        exercises.extend(group)
 
     workout = generate_workout(exercises)
 
